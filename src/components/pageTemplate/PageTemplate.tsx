@@ -1,22 +1,25 @@
-import React from 'react';
-// @ts-ignore
-import classNames from 'classnames/bind';
-import styles from './PageTemplate.module.scss';
+import React, {FunctionComponent} from 'react';
 
-const cx = classNames.bind(styles);
+
+
+
 
 interface Props {
 }
 
-const PageTemplate: React.FC<Props> = ({ children }) => {
+const PageTemplate: FunctionComponent<Props> = ({ children }) => {
     return (
-        <div className={cx('page-template')}>
+        <PageTemplate>
             <h1>일정 관리</h1>
             <div className={cx('content')}>
                 {children}
             </div>
-        </div>
+        </PageTemplate>
     );
 };
+
+const PageTemplate = styled.div`
+    // some styles
+`
 
 export default PageTemplate;
